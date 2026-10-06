@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LEO STORE | شحن الألعاب</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,6 +19,7 @@
 
 <main>
 
+    <!-- الألعاب -->
     <section class="hero">
         <h1>اختار لعبتك</h1>
         <p>اختار اللعبة وشوف الباقات المتاحة</p>
@@ -46,66 +50,122 @@
 
     </section>
 
+
+    <!-- طرق الدفع -->
+    <section class="payment-section">
+
+        <h2>💳 طرق الدفع</h2>
+
+        <p class="payment-subtitle">
+            اختار طريقة الدفع المناسبة
+        </p>
+
+
+        <!-- Vodafone Cash -->
+        <button
+            class="payment-card vodafone"
+            onclick="payVodafone()"
+        >
+
+            <img
+                src="vodafone-cash.png"
+                alt="Vodafone Cash"
+            >
+
+            <div>
+                <h3>Vodafone Cash</h3>
+                <p>اضغط للدفع</p>
+            </div>
+
+            <span class="arrow">←</span>
+
+        </button>
+
+
+        <!-- Etisalat Cash -->
+        <button
+            class="payment-card etisalat"
+            onclick="payEtisalat()"
+        >
+
+            <img
+                src="etisalat-cash.png"
+                alt="Etisalat Cash"
+            >
+
+            <div>
+                <h3>Etisalat Cash</h3>
+                <p>اضغط للدفع</p>
+            </div>
+
+            <span class="arrow">←</span>
+
+        </button>
+
+    </section>
+
+
+    <!-- التواصل -->
     <section class="contact">
+
         <h2>📱 محتاج مساعدة؟</h2>
-        <p>تواصل معنا على واتساب</p>
+
+        <p>تواصل معنا مباشرة</p>
+
 
         <a
             href="https://wa.me/201108302815?text=مرحباً%20LEO%20STORE"
             target="_blank"
-            class="whatsapp"
+            class="social-button whatsapp"
         >
-            تواصل على واتساب
+            💬
+            <span>واتساب</span>
         </a>
 
-        <p class="phone">+20 110 830 2815</p>
+
+        <a
+            href="https://www.instagram.com/mohamedabdelazizx/"
+            target="_blank"
+            class="social-button instagram"
+        >
+            📸
+            <span>Instagram</span>
+        </a>
+
     </section>
 
 </main>
+
 
 <footer>
     © 2026 LEO STORE
 </footer>
 
+
+<script>
+
+    function payVodafone() {
+
+        alert(
+            "🔴 Vodafone Cash\n\n" +
+            "رقم المحفظة: 01094676883\n\n" +
+            "بعد التحويل تواصل معنا على واتساب وأرسل صورة التحويل."
+        );
+
+    }
+
+
+    function payEtisalat() {
+
+        alert(
+            "🟢 Etisalat Cash\n\n" +
+            "رقم المحفظة: 01109302815\n\n" +
+            "بعد التحويل تواصل معنا على واتساب وأرسل صورة التحويل."
+        );
+
+    }
+
+</script>
+
 </body>
 </html>
-<section class="payment-section">
-
-    <h2>💳 طرق الدفع</h2>
-
-    <div class="payment-method">
-
-        <img src="vodafone-cash.png" alt="Vodafone Cash">
-
-        <div>
-            <h3>Vodafone Cash</h3>
-            <p>01094676883</p>
-        </div>
-
-    </div>
-
-    <div class="payment-method">
-
-        <img src="etisalat-cash.png" alt="Etisalat Cash">
-
-        <div>
-            <h3>Etisalat Cash</h3>
-            <p>01109302815</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<div class="social-section">
-
-    <button onclick="openWhatsApp()">
-        💬 WhatsApp
-    </button>
-
-    <button onclick="openInstagram()">
-        📸 Instagram
-    </button>
-
-</div>
