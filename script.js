@@ -1,27 +1,38 @@
 const WHATSAPP_NUMBER = "201108302815";
 
-function orderNow(game, packageName, price) {
-    const playerId = document.getElementById("playerId").value.trim();
+function orderNow(gameName, productName, price) {
 
-    if (!playerId) {
-        alert("من فضلك اكتب ID اللعبة أولاً.");
-        document.getElementById("playerId").focus();
+    const playerInput = document.getElementById("playerId");
+
+    const playerId = playerInput.value.trim();
+
+    if (playerId === "") {
+
+        alert("من فضلك اكتب ID اللاعب أولاً.");
+
+        playerInput.focus();
+
         return;
     }
 
-    const message = `
-مرحباً LEO STORE 👋
+    const message =
+`مرحباً LEO STORE 👋
 
-🎮 اللعبة: ${game}
-📦 الباقة: ${packageName}
-💰 السعر: ${price} جنيه
+🎮 اللعبة: ${gameName}
+
+📦 اسم المنتج: ${productName}
+
+💰 السعر: ${price} جنيه مصري
+
 🆔 ID اللاعب: ${playerId}
 
-أريد إتمام طلب الشحن.
-`;
+أريد طلب هذا المنتج، من فضلك.`;
 
     const whatsappURL =
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
     window.open(whatsappURL, "_blank");
 }
