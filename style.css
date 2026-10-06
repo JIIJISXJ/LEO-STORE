@@ -1,325 +1,541 @@
+/* =========================================
+   LEO STORE - GAMING DESIGN
+   ========================================= */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Tahoma, sans-serif;
-    background: #070a10;
-    color: white;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background:
+        radial-gradient(circle at top, #18204a 0%, #080b18 45%, #04050b 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
 
 header {
     text-align: center;
-    padding: 30px 15px;
-    background: linear-gradient(
-        135deg,
-        #111827,
-        #05070b
-    );
-    border-bottom: 1px solid #252e3d;
+    padding: 35px 20px 30px;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: #6c5ce7;
+    filter: blur(80px);
+    opacity: 0.25;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
 .logo {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 900;
     letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
 }
 
 .logo span {
-    color: #00e5ff;
+    color: #7c5cff;
 }
 
 header p {
-    color: #aeb7c7;
+    margin-top: 10px;
+    color: #aeb5d6;
+    font-size: 15px;
 }
 
-/* Hero */
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 92%;
+    max-width: 850px;
+    margin: auto;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
 
 .hero {
     text-align: center;
-    padding: 45px 15px 25px;
+    padding: 30px 10px 25px;
 }
 
 .hero h1 {
-    font-size: 36px;
+    font-size: 30px;
+    font-weight: 900;
     margin-bottom: 10px;
 }
 
 .hero p {
-    color: #aeb7c7;
+    color: #9da5c7;
+    font-size: 15px;
 }
 
-/* Games */
+
+/* =========================================
+   GAMES
+   ========================================= */
 
 .games {
-    max-width: 1050px;
-    margin: 25px auto 50px;
-    padding: 0 15px;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
+    margin-bottom: 45px;
 }
 
 .game-card {
-    min-height: 270px;
-
     text-decoration: none;
     color: white;
-
+    min-height: 210px;
     border-radius: 22px;
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    padding: 24px 15px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 
-    border: 1px solid #303b4d;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
-    transition: 0.25s;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s ease;
+}
+
+.game-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #6c5ce7;
+    filter: blur(70px);
+    opacity: 0.25;
+    top: -50px;
+    right: -50px;
 }
 
 .game-card:hover {
-    transform: translateY(-7px);
-    border-color: #00e5ff;
-}
-
-.freefire-card {
-    background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.8)
-        ),
-        url("https://cdn.wildflamestudio.com/common/web_event/official2.ff.garena.all/202210/82fe305f7dbb9f25e68996f8f719e576.jpg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.pubg-card {
-    background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.8)
-        ),
-        url("https://pbs.twimg.com/media/EZrVgJ_XkAQX9jX.jpg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.blood-card {
-    background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.8)
-        ),
-        url("https://cdn.vexagame.com/production/images/Product/c6fcbedc8-BLOOD%20STRIKE.webp?v=0.3935315718408674");
-
-    background-size: cover;
-    background-position: center;
+    transform: translateY(-8px);
+    border-color: rgba(124, 92, 255, 0.7);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(108, 92, 231, 0.2);
 }
 
 .game-icon {
-    font-size: 55px;
+    font-size: 48px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
 .game-card h2 {
-    margin: 15px 0 5px;
+    font-size: 20px;
+    margin-bottom: 7px;
+    position: relative;
 }
 
 .game-card p {
-    color: #d1d7e0;
+    color: #aeb5d6;
+    font-size: 14px;
+    margin-bottom: 18px;
+    position: relative;
 }
 
 .game-card span {
-    margin-top: 12px;
-
-    background: #00c8e8;
-    color: #001018;
-
-    padding: 11px 22px;
-    border-radius: 10px;
-
-    font-weight: bold;
-}
-
-/* ID Box */
-
-.id-box {
-    max-width: 520px;
-    margin: 25px auto;
-
-    padding: 20px;
-
-    background: rgba(12,18,29,.95);
-
-    border: 1px solid #303b4d;
-    border-radius: 18px;
-}
-
-.id-box label {
-    display: block;
-    margin-bottom: 9px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-
-    padding: 15px;
-
+    display: inline-block;
+    background: linear-gradient(135deg, #7157ff, #9b59ff);
+    padding: 9px 15px;
     border-radius: 12px;
-    border: 1px solid #344155;
-
-    background: #080e18;
-    color: white;
-
-    font-size: 16px;
-}
-
-input:focus {
-    outline: 2px solid #00e5ff;
-}
-
-/* Packages */
-
-.packs {
-    max-width: 1050px;
-    margin: 30px auto;
-
-    padding: 0 15px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 18px;
-}
-
-.pack {
-    background: rgba(12,18,29,.95);
-
-    border: 1px solid #303b4d;
-    border-radius: 18px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    transition: .2s;
-}
-
-.pack:hover {
-    transform: translateY(-5px);
-    border-color: #00e5ff;
-}
-
-.pack h3 {
-    margin-top: 0;
-}
-
-.price {
-    font-size: 25px;
-    font-weight: 900;
-
-    color: #00e5ff;
-}
-
-.order {
-    margin-top: 15px;
-
-    padding: 12px 25px;
-
-    border: none;
-    border-radius: 11px;
-
-    background: #00c8e8;
-    color: #001018;
-
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
+    position: relative;
+}
+
+
+/* =========================================
+   PAYMENT
+   ========================================= */
+
+.payment-section {
+    margin-top: 35px;
+    margin-bottom: 45px;
+}
+
+.payment-section h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.payment-subtitle {
+    text-align: center;
+    color: #8f97b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* Payment Card */
+
+.payment-card {
+    width: 100%;
+    min-height: 85px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 14px;
+    padding: 14px 18px;
+
+    border-radius: 20px;
+
+    color: white;
+    text-align: right;
 
     cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s ease;
 }
 
-.order:hover {
-    filter: brightness(1.15);
+.payment-card:hover {
+    transform: scale(1.015);
 }
 
-/* Contact */
+.payment-card:active {
+    transform: scale(0.98);
+}
+
+.payment-card img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+    padding: 6px;
+}
+
+.payment-card div {
+    flex: 1;
+}
+
+.payment-card h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.payment-card p {
+    font-size: 13px;
+    color: #9da5c7;
+}
+
+.arrow {
+    font-size: 25px;
+    color: #9b8cff;
+}
+
+
+/* Vodafone */
+
+.vodafone {
+    border-right: 3px solid #e60000;
+}
+
+.vodafone:hover {
+    box-shadow:
+        0 10px 35px rgba(230, 0, 0, 0.15);
+}
+
+
+/* Etisalat */
+
+.etisalat {
+    border-right: 3px solid #00a651;
+}
+
+.etisalat:hover {
+    box-shadow:
+        0 10px 35px rgba(0, 166, 81, 0.15);
+}
+
+
+/* =========================================
+   CONTACT
+   ========================================= */
 
 .contact {
     text-align: center;
 
-    padding: 40px 15px;
+    padding: 30px 20px;
 
-    background: #0e141e;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 92, 255, 0.12),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-.whatsapp {
-    display: inline-block;
+.contact h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
 
-    background: #20c46b;
+.contact p {
+    color: #9da5c7;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   SOCIAL BUTTONS
+   ========================================= */
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 12px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
     color: white;
 
-    text-decoration: none;
-
-    padding: 14px 25px;
-
-    border-radius: 12px;
-
     font-weight: bold;
+
+    transition: 0.3s ease;
 }
 
-.phone {
-    direction: ltr;
-    color: #b8c1d0;
+.social-button:hover {
+    transform: translateY(-3px);
 }
 
-/* Back */
 
-.back {
-    display: block;
+/* WhatsApp */
 
-    text-align: center;
+.whatsapp {
+    background: linear-gradient(
+        135deg,
+        #1ebe5d,
+        #0f9d48
+    );
 
-    margin: 30px;
-
-    color: #cbd3df;
-
-    text-decoration: none;
+    box-shadow:
+        0 10px 25px rgba(30, 190, 93, 0.2);
 }
 
-/* Footer */
+
+/* Instagram */
+
+.instagram {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+
+    box-shadow:
+        0 10px 25px rgba(253, 29, 29, 0.15);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
     text-align: center;
 
-    padding: 25px;
+    padding: 30px 15px;
 
-    color: #737e90;
+    margin-top: 40px;
+
+    color: #6f7695;
+
+    font-size: 13px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile */
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 700px) {
 
-    .games,
-    .packs {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 28px;
+    header {
+        padding-top: 28px;
     }
 
     .logo {
-        font-size: 30px;
+        font-size: 35px;
     }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .games {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .game-card {
+        min-height: 175px;
+        padding: 20px;
+    }
+
+    .game-icon {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .game-card h2 {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    main {
+        width: 94%;
+    }
+
+    .logo {
+        font-size: 31px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .payment-card {
+        padding: 12px;
+    }
+
+    .payment-card img {
+        width: 52px;
+        height: 52px;
+    }
+
+}
+
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+header,
+.hero,
+.games,
+.payment-section,
+.contact {
+    animation: fadeUp 0.7s ease both;
+}
+
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+    background: #7c5cff;
+    color: white;
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #05060c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5f4bd8;
+    border-radius: 10px;
 }
